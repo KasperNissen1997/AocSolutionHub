@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AocSolutionHub.Mvvm.Views"
+        xmlns:_2025="clr-namespace:AocSolutionHub.Mvvm.Views._2025"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <TabControl TabStripPlacement="Left">
+
+            <TabItem Header="2024">
+            </TabItem>
+            <TabItem Header="2025" IsSelected="True">
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="Day 1">
+                        <_2025:Day1View/>
+                    </TabItem>
+                    <TabItem Header="Day 2">
+                        <_2025:Day2View/>
+                    </TabItem>
+                </TabControl>
+
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

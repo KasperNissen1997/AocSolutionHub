@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AocSolutionHub.Mvvm.ViewModels
 {
-    public class MainWindowVM
+    public class MainWindowVM : ObservableObject
     {
+        public int Year { get; set; } = 2025;
+        public int Day { get; set; } = 1;
+
+        public MainWindowVM() { }
     }
 }

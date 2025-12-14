@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using AocSolutionHub.Mvvm.ViewModels;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,8 +19,13 @@ namespace AocSolutionHub.Mvvm.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowVM _vm;
+
         public MainWindow()
         {
+            if (DesignerProperties.GetIsInDesignMode(this))
+                _vm = Ioc.Default.GetRequiredService<MainWindowVM>();
+
             InitializeComponent();
         }
     }
