@@ -2,10 +2,13 @@
 
 namespace AocSolutionHub.Mvvm.ViewModels
 {
-    public class MainWindowVM : ObservableObject
+    public partial class MainWindowVM : ObservableObject
     {
-        public int Year { get; set; } = 2025;
-        public int Day { get; set; } = 1;
+        [ObservableProperty]
+        private int _year = 2025;
+
+        [ObservableProperty]
+        private int _day = 2;
 
         public MainWindowVM() { }
     }

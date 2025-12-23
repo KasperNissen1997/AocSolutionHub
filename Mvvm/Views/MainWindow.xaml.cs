@@ -23,10 +23,12 @@ namespace AocSolutionHub.Mvvm.Views
 
         public MainWindow()
         {
-            if (DesignerProperties.GetIsInDesignMode(this))
+            InitializeComponent();
+
+            if (!DesignerProperties.GetIsInDesignMode(this))
                 _vm = Ioc.Default.GetRequiredService<MainWindowVM>();
 
-            InitializeComponent();
+            DataContext = _vm;
         }
     }
 }
