@@ -10,22 +10,54 @@
       d:Background="White"
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
+    <Grid Margin="8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <TextBox AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" />
+        <!-- Title -->
+        <Label FontSize="60" FontWeight="Light" Content="Secret entrance" />
 
-        <Button Width="80" Grid.Column="3" Grid.Row="1" Height="50" Command="{Binding SolveCommand}" Content="Solve!" />
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="3" Content="Input:" />
+            
+            <Label Grid.Column="7" Content="Solution:" />
+
+            <Button Padding="0" Grid.Row="1" ToolTip="Paste" Grid.Column="1" Width="30" Height="30" Command="{Binding PasteInputCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe77f;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+            <TextBox Grid.Row="1" Grid.Column="3" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" />
+
+            <Label Grid.Row="1" Grid.Column="5" FontFamily="Segoe Fluent Icons" Content="&#xf0af;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+            <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="7" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Cursor="IBeam" />
+
+            <Button Padding="0" Grid.Row="1" ToolTip="Copy" Grid.Column="9" Width="30" Height="30" Command="{Binding CopySolutionCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe8c8;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+
+        <Button Width="150" Grid.Row="4" Height="30" Command="{Binding SolveCommand}" Content="Solve!" HorizontalAlignment="Center" />
+
     </Grid>
 </UserControl>
