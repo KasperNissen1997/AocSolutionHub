@@ -1,7 +1,7 @@
-﻿<Application x:Class="AocSolutionHub.App"
+﻿<Application x:Class="Aoc.Ui.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AocSolutionHub"
+             xmlns:local="clr-namespace:Aoc"
              StartupUri="Mvvm/Views/MainWindow.xaml"
              ThemeMode="Dark">
     <Application.Resources>

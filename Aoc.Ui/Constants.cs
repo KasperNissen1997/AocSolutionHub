@@ -1,4 +1,4 @@
-﻿namespace AocSolutionHub
+﻿namespace Aoc
 {
     public static class Constants
     {

@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="2025Solvers\**" />
+    <EmbeddedResource Remove="2025Solvers\**" />
+    <None Remove="2025Solvers\**" />
+    <Page Remove="2025Solvers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
   </ItemGroup>

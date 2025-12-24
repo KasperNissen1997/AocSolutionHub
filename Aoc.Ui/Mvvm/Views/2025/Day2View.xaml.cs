@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace AocSolutionHub.Mvvm.Views._2025
+namespace Aoc.Ui.Mvvm.Views._2025
 {
     /// <summary>
     /// Interaction logic for Day2View.xaml

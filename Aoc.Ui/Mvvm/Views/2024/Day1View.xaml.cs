@@ -1,9 +1,9 @@
-﻿using Aoc.Ui.Mvvm.ViewModels._2025;
+﻿using Aoc.Ui.Mvvm.ViewModels._2024;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using System.ComponentModel;
 using System.Windows.Controls;
 
-namespace Aoc.Ui.Mvvm.Views._2025
+namespace Aoc.Ui.Mvvm.Views._2024
 {
     /// <summary>
     /// Interaction logic for Day1View.xaml

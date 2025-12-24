@@ -1,9 +1,9 @@
-﻿using AocSolutionHub.Mvvm.ViewModels;
+﻿using Aoc.Mvvm.ViewModels;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
-namespace AocSolutionHub
+namespace Aoc.Ui
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -21,13 +21,12 @@ namespace AocSolutionHub
         {
             ServiceCollection services = new();
 
-            // Register your services and ViewModels here
-            //services.AddSingleton<ILogger, Logger>(); // Example service
-            //services.AddSingleton<IMyService, MyService>();
+            // Register the view models.
+            services.AddTransient<Aoc.Ui.Mvvm.ViewModels._2024.Day1VM>();
+            services.AddTransient<Aoc.Ui.Mvvm.ViewModels._2025.Day1VM>();
 
-            services.AddTransient<MainWindowVM>(); // Register your ViewModels
+            services.AddTransient<MainWindowVM>();
 
-            // Build the provider and configure the Ioc instance
             return services.BuildServiceProvider();
         }
     }
