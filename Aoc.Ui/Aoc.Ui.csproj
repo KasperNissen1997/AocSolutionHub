@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aoc.Solvers\Aoc.Solvers.csproj" />
+  </ItemGroup>
+
 </Project>
