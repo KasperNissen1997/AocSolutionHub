@@ -1,13 +1,11 @@
-﻿using Aoc.Ui.Mvvm.ViewModels._2025;
+﻿using Aoc.Ui.Enums;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Aoc.Mvvm.ViewModels
+namespace Aoc.Ui.Mvvm.ViewModels
 {
     public partial class MainWindowVM : ObservableObject
     {
         [ObservableProperty]
-        private int _year = 2025;
-        [ObservableProperty]
-        private int _day = 2;
+        private PageCode? _activePageCode;
     }
 }

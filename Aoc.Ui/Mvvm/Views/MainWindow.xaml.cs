@@ -1,4 +1,4 @@
-﻿using Aoc.Mvvm.ViewModels;
+﻿using Aoc.Ui.Mvvm.ViewModels;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using System.ComponentModel;
 using System.Windows;

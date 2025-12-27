@@ -1,4 +1,4 @@
-﻿using Aoc.Mvvm.ViewModels;
+﻿using Aoc.Ui.Mvvm.ViewModels;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
@@ -22,8 +22,8 @@ namespace Aoc.Ui
             ServiceCollection services = new();
 
             // Register the view models.
-            services.AddTransient<Aoc.Ui.Mvvm.ViewModels._2024.Day1VM>();
-            services.AddTransient<Aoc.Ui.Mvvm.ViewModels._2025.Day1VM>();
+            services.AddTransient<Mvvm.ViewModels._2024.Day1VM>();
+            services.AddTransient<Mvvm.ViewModels._2025.Day1VM>();
 
             services.AddTransient<MainWindowVM>();
 

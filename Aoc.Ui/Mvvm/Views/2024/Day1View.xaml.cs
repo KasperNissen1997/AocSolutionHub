@@ -8,7 +8,7 @@ namespace Aoc.Ui.Mvvm.Views._2024
     /// <summary>
     /// Interaction logic for Day1View.xaml
     /// </summary>
-    public partial class Day1View : UserControl
+    public partial class Day1View : Page
     {
         private readonly Day1VM _vm;
 
