@@ -1,5 +1,6 @@
 ﻿using Aoc.Ui.Enums;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -7,17 +8,19 @@ namespace Aoc.Ui.Converters
 {
     public class PageCodeToPageConverter : IValueConverter
     {
-        public required Page LandingPage { get; set; }
+        public required FrameworkElement LandingPage { get; set; }
 
-        public required Page Year2024Day1Page { get; set; }
+        public required FrameworkElement Year2024OverviewPage { get; set; }
+        public required FrameworkElement Year2024Day1Page { get; set; }
 
-        public required Page Year2025Day1Page { get; set; }
-        public required Page Year2025Day2Page { get; set; }
+        public required FrameworkElement Year2025OverviewPage { get; set; }
+        public required FrameworkElement Year2025Day1Page { get; set; }
+        public required FrameworkElement Year2025Day2Page { get; set; }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (targetType != typeof(object))
-                throw new ArgumentException("The target type must be a page.", nameof(targetType));
+                throw new ArgumentException("The target type must be a page, or a descendent thereof.", nameof(targetType));
 
             if (value is null)
                 return LandingPage;
@@ -30,9 +33,13 @@ namespace Aoc.Ui.Converters
                 case PageCode.LandingPage:
                     return LandingPage;
 
+                case PageCode.Year2024:
+                    return Year2024OverviewPage;
                 case PageCode.Year2024Day1:
                     return Year2024Day1Page;
 
+                case PageCode.Year2025:
+                    return Year2025OverviewPage;
                 case PageCode.Year2025Day1:
                     return Year2025Day1Page;
                 case PageCode.Year2025Day2:

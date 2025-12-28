@@ -4,9 +4,11 @@
     {
         LandingPage,
 
+        Year2024,
         Year2024Day1,
         Year2024Day2,
 
+        Year2025,
         Year2025Day1,
         Year2025Day2,
     }

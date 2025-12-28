@@ -11,10 +11,6 @@ namespace Aoc.Ui.Converters
             if (targetType != typeof(bool))
                 throw new ArgumentException("The target type must be a boolean.", nameof(targetType));
 
-            // This can be null if no page is selected.
-            if (value is null)
-                return false;
-
             if (value is not PageCode pageCode)
                 throw new ArgumentException("The value must be a page code enum representing the selected page.", nameof(value));
 
@@ -28,7 +24,7 @@ namespace Aoc.Ui.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (targetType != typeof(PageCode?))
+            if (targetType != typeof(PageCode))
                 throw new ArgumentException("The target type must be a page code enum.", nameof(targetType));
 
             if (value is not bool isSelected)

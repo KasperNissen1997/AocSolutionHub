@@ -16,14 +16,18 @@
     <Window.Resources>
         <local:LandingPage x:Key="LandingPage" />
 
+        <_2024:OverviewPage x:Key="Year2024OverviewPage" />
         <_2024:Day1View x:Key="Year2024Day1Page" />
         
+        <_2025:OverviewPage x:Key="Year2025OverviewPage" />
         <_2025:Day1View x:Key="Year2025Day1Page" />
         <_2025:Day2View x:Key="Year2025Day2Page" />
 
         <converters:PageCodeToPageConverter x:Key="PageCodeToPageConverter"
                                             LandingPage="{StaticResource ResourceKey=LandingPage}"
+                                            Year2024OverviewPage="{StaticResource ResourceKey=Year2024OverviewPage}"
                                             Year2024Day1Page="{StaticResource ResourceKey=Year2024Day1Page}"
+                                            Year2025OverviewPage="{StaticResource ResourceKey=Year2025OverviewPage}"
                                             Year2025Day1Page="{StaticResource ResourceKey=Year2025Day1Page}"
                                             Year2025Day2Page="{StaticResource ResourceKey=Year2025Day2Page}" />
         <converters:PageCodeToBooleanConverter x:Key="PageCodeToBooleanConverter" />
@@ -37,10 +41,11 @@
         </Grid.ColumnDefinitions>
         
         <TreeView>
-            <TreeViewItem Header="2024">
+            <TreeViewItem Header="Home" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.LandingPage}}" />
+            <TreeViewItem Header="2024" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2024}}">
                 <TreeViewItem Header="Day 1" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2024Day1}}" />
             </TreeViewItem>
-            <TreeViewItem Header="2025">
+            <TreeViewItem Header="2025" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2025}}">
                 <TreeViewItem Header="Day 1" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2025Day1}}" />
                 <TreeViewItem Header="Day 2" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2025Day2}}" />
             </TreeViewItem>

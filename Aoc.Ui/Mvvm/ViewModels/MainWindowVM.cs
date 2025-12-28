@@ -6,6 +6,6 @@ namespace Aoc.Ui.Mvvm.ViewModels
     public partial class MainWindowVM : ObservableObject
     {
         [ObservableProperty]
-        private PageCode? _activePageCode;
+        private PageCode _activePageCode = Constants.DefaultPageCode;
     }
 }
