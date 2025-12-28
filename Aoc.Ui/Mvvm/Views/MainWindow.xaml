@@ -12,13 +12,14 @@
         xmlns:viewmodels="clr-namespace:Aoc.Ui.Mvvm.ViewModels" 
         d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowVM}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="900"
+        MinWidth="900">
     <Window.Resources>
         <local:LandingPage x:Key="LandingPage" />
 
         <_2024:OverviewPage x:Key="Year2024OverviewPage" />
         <_2024:Day1View x:Key="Year2024Day1Page" />
-        
+
         <_2025:OverviewPage x:Key="Year2025OverviewPage" />
         <_2025:Day1View x:Key="Year2025Day1Page" />
         <_2025:Day2View x:Key="Year2025Day2Page" />
@@ -34,13 +35,14 @@
 
         <selectors:ViewDataTemplateSelector x:Key="ViewDataTemplateSelector" />
     </Window.Resources>
-    <Grid>
+    <Grid Margin="0, 8, 0, 0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="8" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <TreeView>
+
+        <TreeView Width="140" HorizontalAlignment="Stretch">
             <TreeViewItem Header="Home" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.LandingPage}}" />
             <TreeViewItem Header="2024" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2024}}">
                 <TreeViewItem Header="Day 1" IsSelected="{Binding ActivePageCode, Converter={StaticResource PageCodeToBooleanConverter}, ConverterParameter={x:Static enums:PageCode.Year2024Day1}}" />
@@ -51,6 +53,8 @@
             </TreeViewItem>
         </TreeView>
 
-        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" Content="{Binding ActivePageCode, Converter={StaticResource PageCodeToPageConverter}}" />
+        <Border Grid.Column="2" Padding="8" CornerRadius="8, 0, 0, 0" Background="{DynamicResource LayerFillColorDefaultBrush}">
+            <Frame NavigationUIVisibility="Hidden" Content="{Binding ActivePageCode, Converter={StaticResource PageCodeToPageConverter}}" />
+        </Border>
     </Grid>
 </Window>

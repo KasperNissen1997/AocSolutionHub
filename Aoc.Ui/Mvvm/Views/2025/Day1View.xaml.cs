@@ -10,14 +10,14 @@ namespace Aoc.Ui.Mvvm.Views._2025
     /// </summary>
     public partial class Day1View : Page
     {
-        private readonly Day1VM _vm;
+        private readonly Day1ViewModel _vm;
 
         public Day1View()
         {
             InitializeComponent();
 
             if (!DesignerProperties.GetIsInDesignMode(this))
-                _vm = Ioc.Default.GetRequiredService<Day1VM>();
+                _vm = Ioc.Default.GetRequiredService<Day1ViewModel>();
 
             DataContext = _vm;
         }

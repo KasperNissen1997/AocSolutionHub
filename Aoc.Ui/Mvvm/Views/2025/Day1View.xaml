@@ -5,59 +5,153 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Aoc.Ui.Mvvm.Views._2025" 
              xmlns:_2025="clr-namespace:Aoc.Ui.Mvvm.ViewModels._2025" 
-             d:DataContext="{d:DesignInstance Type=_2025:Day1VM}"
+             d:DataContext="{d:DesignInstance Type=_2025:Day1ViewModel}"
              mc:Ignorable="d" 
       d:Background="White"
-      d:DesignHeight="450" d:DesignWidth="800">
+      d:DesignHeight="450" d:DesignWidth="800"
+      MinWidth="650"
+      MinHeight="450">
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Page.Resources>
 
-    <Grid Margin="8">
+
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!-- Title -->
-        <Label FontSize="60" FontWeight="Light" Content="Secret entrance" />
+        <Label FontSize="60" HorizontalAlignment="Center" FontWeight="Light" Content="Secret entrance" />
 
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Expander Grid.Row="2" Header="Part 1" IsExpanded="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <Label Grid.Column="3" Content="Input:" />
-            
-            <Label Grid.Column="7" Content="Solution:" />
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <Button Padding="0" Grid.Row="1" ToolTip="Paste" Grid.Column="1" Width="30" Height="30" Command="{Binding PasteInputCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe77f;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Label Grid.Column="3" Content="Input:" />
 
-            <TextBox Grid.Row="1" Grid.Column="3" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" />
+                    <Label Grid.Column="7" Content="Solution:" />
 
-            <Label Grid.Row="1" Grid.Column="5" FontFamily="Segoe Fluent Icons" Content="&#xf0af;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Button Grid.Row="1" Cursor="Hand" Padding="0" ToolTip="Paste" Grid.Column="1" Width="30" Height="30" Command="{Binding PasteInputCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe77f;" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-            <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="7" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Cursor="IBeam" />
+                    <TextBox Grid.Row="1" Grid.Column="3" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Text="{Binding FirstPuzzleInput, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" />
 
-            <Button Padding="0" Grid.Row="1" ToolTip="Copy" Grid.Column="9" Width="30" Height="30" Command="{Binding CopySolutionCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe8c8;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        </Grid>
+                    <Label Grid.Row="1" Grid.Column="5" FontFamily="Segoe Fluent Icons" Content="&#xf0af;" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-        <Button Width="150" Grid.Row="4" Height="30" Command="{Binding SolveCommand}" Content="Solve!" HorizontalAlignment="Center" />
+                    <TextBox IsReadOnly="True" Cursor="No" Grid.Row="1" Grid.Column="7" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Focusable="False" Text="{Binding FirstPuzzleOutput, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <Button Padding="0" Cursor="Hand" Grid.Row="1" ToolTip="Copy" Grid.Column="9" Width="30" Height="30" Command="{Binding CopySolutionCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe8c8;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Grid>
+
+                <Button Width="150" Grid.Row="4" Height="40" Command="{Binding SolveFirstPuzzleCommand}" HorizontalAlignment="Center" Padding="0" VerticalContentAlignment="Stretch">
+                    <Grid>
+                        <Label Content="Solve!" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                        <ProgressBar VerticalAlignment="Bottom" Width="150" IsIndeterminate="{Binding IsBusySolvingFirstPuzzle}" Visibility="{Binding IsBusySolvingFirstPuzzle, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </Grid>
+                </Button>
+
+                <Expander Grid.Row="12" Header="Thought process and reflections." IsExpanded="False" HorizontalAlignment="Stretch">
+                    <TextBlock TextWrapping="Wrap">
+                        Seeing as this was the first puzzle of the year, I expected it to be fairly simple. And it was! <LineBreak/> 
+                        In fact, I had a fun time with my fiancée quizzing her about her approach to the puzzle.
+                    </TextBlock>
+                </Expander>
+            </Grid>
+        </Expander>
+
+        <Expander Grid.Row="4" Header="Part 2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="3" Content="Input:" />
+
+                    <Label Grid.Column="7" Content="Solution:" />
+
+                    <Button Grid.Row="1" Padding="0" Cursor="Hand" ToolTip="Paste" Grid.Column="1" Width="30" Height="30" Command="{Binding PasteInputCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe77f;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    <TextBox Grid.Row="1" Grid.Column="3" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Text="{Binding SecondPuzzleInput, UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" />
+
+                    <Label Grid.Row="1" Grid.Column="5" FontFamily="Segoe Fluent Icons" Content="&#xf0af;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="7" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Width="200" Height="50" VerticalContentAlignment="Center" Cursor="No" Focusable="False" Text="{Binding SecondPuzzleOutput, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <Button Padding="0" Grid.Row="1" Cursor="Hand" ToolTip="Copy" Grid.Column="9" Width="30" Height="30" Command="{Binding CopySolutionCommand}" FontFamily="Segoe Fluent Icons" Content="&#xe8c8;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Grid>
+
+                <Button Width="150" Grid.Row="4" Height="40" Command="{Binding SolveSecondPuzzleCommand}" HorizontalAlignment="Center" Padding="0" VerticalContentAlignment="Stretch">
+                    <Grid>
+                        <Label Content="Solve!" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                        <ProgressBar VerticalAlignment="Bottom" Width="150" IsIndeterminate="{Binding IsBusySolvingSecondPuzzle}" Visibility="{Binding IsBusySolvingSecondPuzzle, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </Grid>
+                </Button>
+
+                <Expander Grid.Row="12" Header="Thought process and reflections." IsExpanded="False" HorizontalAlignment="Stretch">
+                    <TextBlock TextWrapping="Wrap" />
+                </Expander>
+            </Grid>
+        </Expander>
 
     </Grid>
+
 </Page>

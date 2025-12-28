@@ -1,8 +1,13 @@
 ﻿namespace Aoc.Solvers._2025
 {
-    public static class Day1Solver
+    public class Day1Solver : IPuzzleSolver
     {
-        public static void Solve(string input)
+        public async static Task<string> SolveFirstPuzzle(string input)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async static Task<string> SolveSecondPuzzle(string input)
         {
             throw new NotImplementedException();
         }

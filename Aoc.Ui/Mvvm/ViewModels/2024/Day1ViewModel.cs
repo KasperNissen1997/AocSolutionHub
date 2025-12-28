@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Aoc.Ui.Mvvm.ViewModels._2024
 {
-    public partial class Day1VM : ObservableObject
+    public partial class Day1ViewModel : ObservableObject
     {
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(SolveCommand))]

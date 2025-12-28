@@ -22,8 +22,8 @@ namespace Aoc.Ui
             ServiceCollection services = new();
 
             // Register the view models.
-            services.AddTransient<Mvvm.ViewModels._2024.Day1VM>();
-            services.AddTransient<Mvvm.ViewModels._2025.Day1VM>();
+            services.AddTransient<Mvvm.ViewModels._2024.Day1ViewModel>();
+            services.AddTransient<Mvvm.ViewModels._2025.Day1ViewModel>();
 
             services.AddTransient<MainWindowVM>();
 
